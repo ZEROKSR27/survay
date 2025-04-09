@@ -2,9 +2,11 @@ import React from "react";
 
 type Props = {
     onclick?: () => void;
+    rotate?: boolean;
+    text: string;
 };
 
-const Button = ({ onclick }: Props) => {
+const Button = ({ onclick, rotate = false, text }: Props) => {
     return (
         <button
             onClick={onclick}
@@ -12,7 +14,7 @@ const Button = ({ onclick }: Props) => {
         >
             <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-amber-400 group-hover:translate-x-0 ease">
                 <svg
-                    className="w-6 h-6"
+                    className={`w-6 h-6 ${rotate && "rotate-180"} `}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -27,9 +29,9 @@ const Button = ({ onclick }: Props) => {
                 </svg>
             </span>
             <span className="absolute flex items-center justify-center w-full h-full text-amber-300 transition-all duration-300 transform group-hover:translate-x-full ease">
-                التالي
+                {text}
             </span>
-            <span className="relative invisible">التالي</span>
+            <span className="relative invisible">{text}</span>
         </button>
     );
 };

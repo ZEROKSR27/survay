@@ -91,6 +91,32 @@ export default function Survey({
             <div className="w-[94%] sm:w-[90%] lg:w-[80%] gap-2 sm:gap-8 flex flex-col justify-center">
                 {/* Progress bar */}
                 <div className="flex items-center gap-4">
+                    <motion.button
+                        whileTap={{ scale: 0.85 }}
+                        onClick={() => {
+                            if (current === 0) {
+                                toast.error("هذا هو السؤال الاول");
+
+                                return;
+                            }
+                            // Update responses with current selection
+                            const newResponses = [responses.pop()];
+                            // newResponses[current] = selected;
+                            setResponses(newResponses as number[]);
+
+                            // Calculate traits and update personality
+                            const traits = calculateTraits(responses);
+                            GetPersonality(traits);
+
+                            // Move to last question
+                            setCurrent((prev) => prev - 1);
+                            setSelected(null);
+                            console.log(traits, "\n ", personality);
+                        }}
+                        className="w-11 h-11 bg-white/80 shadow-xl rounded-full flex justify-center items-center"
+                    >
+                        <FiArrowRight className="text-rose-500 text-2xl rotate-180" />
+                    </motion.button>
                     <div className="flex-1 h-3 bg-white/80 rounded-full relative overflow-hidden shadow-inner">
                         <motion.div
                             className="absolute top-0 left-0 h-full bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full"

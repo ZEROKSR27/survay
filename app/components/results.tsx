@@ -125,8 +125,12 @@ const Results = ({ personality, results }: Props) => {
                             )}
                         </ul>
                     </div>
-                    <div>
-                        <Button />
+                    <div className="flex w-full sm:w-1/2 items-center">
+                        <Button
+                            text="العودة إلى الصفحة الرئيسية"
+                            rotate={true}
+                        />
+                        <Button text="التقدم" />
                     </div>
                 </motion.div>
             </AnimatePresence>

@@ -614,7 +614,7 @@ export const options = [
         color: "from-cyan-500 to-sky-400",
     },
     {
-        label: "محايد",
+        label: "وسط",
         value: 3,
         emoji: "😐",
         color: "from-gray-400  to-gray-300",
