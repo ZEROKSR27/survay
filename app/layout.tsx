@@ -3,7 +3,7 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import { Cairo } from "next/font/google";
 
-const amiri = Cairo({ subsets: ["arabic"] });
+const cairo = Cairo({ subsets: ["arabic"] });
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={` ${amiri.className}  antialiased`}>
+            <body className={` ${cairo.className}  antialiased`}>
                 <Toaster />
                 {children}
             </body>

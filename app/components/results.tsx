@@ -31,7 +31,7 @@ const Results = ({ personality, results }: Props) => {
                     transition={{ duration: 1 }}
                 >
                     <h2 className="text-4xl text-center w-fit p-0 sm:p-5 mb-10 text-amber-500 sm:shadow-lg rounded-lg font-bold ">
-                        thank you for taking the survey✨
+                        thank you for completing the survey✨
                     </h2>
                     <div className="flex flex-col gap-2 jcenter items-center mb-10">
                         <span>
