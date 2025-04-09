@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
 import { noa } from "../components/typeNoa";
-import Button from "./button";
+// import Button from "./button";
 
 type Props = { personality: string; results: noa[] };
 
@@ -125,13 +125,13 @@ const Results = ({ personality, results }: Props) => {
                             )}
                         </ul>
                     </div>
-                    <div className="flex w-full sm:w-1/2 items-center">
+                    {/* <div className="flex w-full sm:w-1/2 items-center">
                         <Button
                             text="العودة إلى الصفحة الرئيسية"
                             rotate={true}
                         />
                         <Button text="التقدم" />
-                    </div>
+                    </div> */}
                 </motion.div>
             </AnimatePresence>
         </div>
