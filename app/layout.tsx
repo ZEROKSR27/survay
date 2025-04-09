@@ -3,7 +3,7 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import { Cairo } from "next/font/google";
 
-const amiri = Cairo();
+const amiri = Cairo({ subsets: ["arabic"] });
 
 export const metadata: Metadata = {
     title: "Create Next App",
