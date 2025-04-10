@@ -13,6 +13,7 @@ const Results = ({ personality, results }: Props) => {
     ) ?? {
         id: 0,
         name: " ",
+        goodG: [],
         CareersThatSuitYou: [],
         description: "",
         PotentialChallenges: [],
@@ -123,6 +124,23 @@ const Results = ({ personality, results }: Props) => {
                                         key={i}
                                     >
                                         {item}
+                                    </li>
+                                ))}
+                            </ul>
+                            <ul dir="rtl" className=" w-full border-t-4 p-3 ">
+                                <h4 className=" text-2xl sm:text-3xl lg:text-4xl font-extrabold text-rose-500">
+                                    إستراتيجيات نافعة
+                                </h4>
+                                {persObj.goodG.map((item, i) => (
+                                    <li
+                                        className={`p-3 sm:pr-5 sm:pt-5  lg:pr-8 border-amber-200 ${
+                                            i + 1 < persObj.goodG.length
+                                                ? "border-b-[1px]"
+                                                : "border-none"
+                                        } `}
+                                        key={i}
+                                    >
+                                        {i + 1}. {item}
                                     </li>
                                 ))}
                             </ul>

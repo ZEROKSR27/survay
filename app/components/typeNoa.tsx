@@ -5,6 +5,7 @@ export type noa = {
     show: string;
     powerP: string[];
     PotentialChallenges: string[];
+    goodG: [];
     CareersThatSuitYou: string[];
     TipsForMaintainingRelationships: string[];
 };
