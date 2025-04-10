@@ -110,7 +110,7 @@ const Results = ({ personality, results }: Props) => {
                             </ul>
                             <ul dir="rtl" className=" w-full border-t-4 p-3 ">
                                 <h4 className=" text-2xl sm:text-3xl lg:text-4xl font-extrabold text-rose-500">
-                                    التحديات المحتملة
+                                    نقاط الضعف
                                 </h4>
                                 {persObj.PotentialChallenges.map((item, i) => (
                                     <li
