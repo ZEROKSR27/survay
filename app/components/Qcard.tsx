@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 import toast from "react-hot-toast";
 import { questions, options } from "./data";
+import Button from "./button";
 
 type myPROPS = {
     personality: string;
@@ -211,8 +212,9 @@ const Qcard = ({
                         <FiArrowRight className="inline ml-3 text-xl" />
                     </motion.button>
                 ) : (
-                    <motion.button
-                        onClick={() => {
+                    <Button
+                        text=" إرسال النتائج 🎉"
+                        doThis={() => {
                             if (selected === null) {
                                 toast.error(
                                     "يرجى اختيار أحد الخيارات قبل المتابعة"
@@ -230,19 +232,12 @@ const Qcard = ({
                             GetPersonality(traits);
 
                             // Move to next question
+                            setCurrent((prev) => prev + 1);
                             setSelected(null);
                             console.log(traits, "\n ", personality);
                             handleSubmit();
                         }}
-                        className={`w-full px-8 py-4 text-white rounded-2xl font-black text-lg shadow-xl
-${
-    responses.length === questions.length - 1
-        ? "bg-gradient-to-r from-emerald-600 to-teal-500"
-        : "bg-gray-400 cursor-not-allowed"
-}`}
-                    >
-                        إرسال النتائج 🎉
-                    </motion.button>
+                    ></Button>
                 )}
             </div>
         </>

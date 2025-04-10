@@ -25,7 +25,7 @@ export default function Home() {
 
     return (
         <main className="w-full bg-[url('/bg.png')] bg-cover bg-center h-screen ">
-            {current < 99 ? (
+            {current < 2 ? (
                 <Survey
                     personality={personality}
                     setPersonality={setPersonality}
