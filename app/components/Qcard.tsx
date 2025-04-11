@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 import toast from "react-hot-toast";
@@ -6,7 +6,7 @@ import { questions, options } from "./data";
 import Button from "./button";
 
 type myPROPS = {
-    personality: string;
+    // personality: string;
     setPersonality: React.Dispatch<React.SetStateAction<string>>;
     current: number;
     setCurrent: React.Dispatch<React.SetStateAction<number>>;
@@ -14,7 +14,7 @@ type myPROPS = {
 
 const Qcard = ({
     current,
-    personality,
+    // personality,
     setPersonality,
     setCurrent,
 }: myPROPS) => {
@@ -66,6 +66,7 @@ const Qcard = ({
     };
 
     const GetPersonality = (traits: ReturnType<typeof calculateTraits>) => {
+        console.table(traits); // Nice readable table of values
         const normalize = (num: number, dev: number) => (num / dev) * 100;
 
         const normalized = {
@@ -78,8 +79,6 @@ const Qcard = ({
             J: normalize(traits.J, 19),
             P: normalize(traits.P, 21),
         };
-
-        console.table(normalized); // Nice readable table of values
 
         const st_letter = normalized.E >= normalized.I ? "E" : "I";
         const nd_letter = normalized.S >= normalized.N ? "S" : "N";
@@ -113,13 +112,10 @@ const Qcard = ({
                         setResponses(newResponses);
 
                         // Calculate traits and update personality
-                        const traits = calculateTraits(responses);
-                        GetPersonality(traits);
+                        GetPersonality(calculateTraits(newResponses));
 
                         // Move to last question
                         setCurrent((prev) => prev - 1);
-                        setSelected(null);
-                        console.log(traits, "\n ", personality);
                     }}
                     className="w-11 h-11 bg-white/80 shadow-xl rounded-full flex justify-center items-center"
                 >
@@ -209,13 +205,11 @@ const Qcard = ({
                             setResponses(newResponses);
 
                             // Calculate traits and update personality
-                            const traits = calculateTraits(newResponses);
-                            GetPersonality(traits);
+                            GetPersonality(calculateTraits(newResponses));
 
                             // Move to next question
                             setCurrent((prev) => prev + 1);
                             setSelected(null);
-                            console.log(traits, "\n ", personality);
                         }}
                     >
                         التالي
@@ -238,13 +232,11 @@ const Qcard = ({
                             setResponses(newResponses);
 
                             // Calculate traits and update personality
-                            const traits = calculateTraits(newResponses);
-                            GetPersonality(traits);
+                            GetPersonality(calculateTraits(newResponses));
 
-                            // Move to next question
+                            // reveal results by Moving to next question
                             setCurrent((prev) => prev + 1);
                             setSelected(null);
-                            console.log(traits, "\n ", personality);
                             handleSubmit();
                         }}
                     ></Button>
