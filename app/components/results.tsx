@@ -45,7 +45,7 @@ const Results = ({ personality, results }: Props) => {
                             className="w-full  gap-4 sm:gap-8 lg:gap-14 flex flex-col items-center justify-center pt-10 sm:pt-20 lg:pt-25 "
                         >
                             <h3 className="text-3xl font-bold text-center sm:text-5xl lg:text-6xl leading-relaxed">
-                                خمن اي من الشخصيات التالية هي شخصيك
+                                خمن أي من الشخصيات التالية هي شخصيك
                             </h3>
                             {
                                 <ul className=" grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 sm:gap-8 lg:gap-10 sm:px-10 lg:px-20">
@@ -129,7 +129,7 @@ const Results = ({ personality, results }: Props) => {
                             </ul>
                             <ul dir="rtl" className=" w-full border-t-4 p-3 ">
                                 <h4 className=" text-2xl sm:text-3xl lg:text-4xl font-extrabold text-rose-500">
-                                    إستراتيجيات نافعة
+                                    استراتيجيات نافعة
                                 </h4>
                                 {persObj.goodG.map((item, i) => (
                                     <li

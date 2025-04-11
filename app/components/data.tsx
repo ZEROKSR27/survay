@@ -273,7 +273,7 @@ export const questions = [
         id: 46,
         text: "الخصوصية والوقت المنفرد للتفكير أمران أساسيان بالنسبة لي.",
         effect: "i",
-        effect2: "",
+        effect2: "t",
     },
     {
         id: 47,

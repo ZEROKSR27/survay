@@ -68,16 +68,26 @@ const Qcard = ({
     const GetPersonality = (traits: ReturnType<typeof calculateTraits>) => {
         const normalize = (num: number, dev: number) => (num / dev) * 100;
 
-        const st_letter =
-            normalize(traits.E, 11) >= normalize(traits.I, 11) ? "E" : "I";
-        const nd_letter =
-            normalize(traits.S, 14) >= normalize(traits.N, 16) ? "S" : "N";
-        const rd_letter =
-            normalize(traits.T, 15) >= normalize(traits.F, 36) ? "T" : "F";
-        const th_letter =
-            normalize(traits.J, 18) >= normalize(traits.P, 21) ? "J" : "P";
+        const normalized = {
+            E: normalize(traits.E, 11),
+            I: normalize(traits.I, 11),
+            S: normalize(traits.S, 14),
+            N: normalize(traits.N, 16),
+            T: normalize(traits.T, 16),
+            F: normalize(traits.F, 36),
+            J: normalize(traits.J, 18),
+            P: normalize(traits.P, 21),
+        };
+
+        console.table(normalized); // Nice readable table of values
+
+        const st_letter = normalized.E >= normalized.I ? "E" : "I";
+        const nd_letter = normalized.S >= normalized.N ? "S" : "N";
+        const rd_letter = normalized.T >= normalized.F ? "T" : "F";
+        const th_letter = normalized.J >= normalized.P ? "J" : "P";
 
         const newPersonality = st_letter + nd_letter + rd_letter + th_letter;
+        console.log("Final Personality:", newPersonality);
         setPersonality(newPersonality);
         return newPersonality;
     };
@@ -98,9 +108,9 @@ const Qcard = ({
                             return;
                         }
                         // Update responses with current selection
-                        const newResponses = [responses.pop()];
+                        const newResponses = responses.slice(0, -1);
                         // newResponses[current] = selected;
-                        setResponses(newResponses as number[]);
+                        setResponses(newResponses);
 
                         // Calculate traits and update personality
                         const traits = calculateTraits(responses);
