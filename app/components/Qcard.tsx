@@ -75,7 +75,7 @@ const Qcard = ({
             N: normalize(traits.N, 16),
             T: normalize(traits.T, 16),
             F: normalize(traits.F, 36),
-            J: normalize(traits.J, 18),
+            J: normalize(traits.J, 19),
             P: normalize(traits.P, 21),
         };
 

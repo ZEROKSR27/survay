@@ -471,7 +471,7 @@ export const questions = [
         id: 79,
         text: "أسعى للتأكد من شعور الجميع بسماع أصواتهم ومشاركتهم في النقاش.",
         effect: "f",
-        effect2: "",
+        effect2: "j",
     },
     {
         id: 80,
