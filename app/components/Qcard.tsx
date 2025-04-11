@@ -6,18 +6,12 @@ import { questions, options } from "./data";
 import Button from "./button";
 
 type myPROPS = {
-    // personality: string;
     setPersonality: React.Dispatch<React.SetStateAction<string>>;
     current: number;
     setCurrent: React.Dispatch<React.SetStateAction<number>>;
 };
 
-const Qcard = ({
-    current,
-    // personality,
-    setPersonality,
-    setCurrent,
-}: myPROPS) => {
+const Qcard = ({ current, setPersonality, setCurrent }: myPROPS) => {
     const [responses, setResponses] = useState<number[]>([]);
     const [selected, setSelected] = useState<number | null>(null);
 

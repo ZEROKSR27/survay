@@ -4,14 +4,12 @@ import Welcome from "./welcome";
 import Qcard from "./Qcard";
 
 type SurveyProps = {
-    personality: string;
     setPersonality: React.Dispatch<React.SetStateAction<string>>;
     current: number;
     setCurrent: React.Dispatch<React.SetStateAction<number>>;
 };
 
 export default function Survey({
-    personality,
     setPersonality,
     current,
     setCurrent,
@@ -27,7 +25,6 @@ export default function Survey({
                     </div>
                 ) : (
                     <Qcard
-                        personality={personality}
                         setPersonality={setPersonality}
                         current={current}
                         setCurrent={setCurrent}
